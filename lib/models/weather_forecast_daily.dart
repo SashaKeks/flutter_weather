@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings
+
+import 'package:wearher_app/utilities/constants.dart';
+
 class WeatherForecast {
   City? city;
   String? cod;
@@ -172,6 +176,10 @@ class WeatherList {
     data['pop'] = pop;
     data['rain'] = rain;
     return data;
+  }
+
+  String getIconUrl() {
+    return Constants.weatherImagesUrl + weather![0].icon! + '.png';
   }
 }
 
