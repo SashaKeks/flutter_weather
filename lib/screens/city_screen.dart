@@ -27,23 +27,30 @@ class _CityScreenState extends State<CityScreen> {
                 style: const TextStyle(
                   color: Colors.white,
                 ),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'Enter city name',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Colors.white,
                   ),
                   filled: true,
                   fillColor: Colors.black87,
-                  border: OutlineInputBorder(
+                  border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.0),
                     ),
                     borderSide: BorderSide.none,
                   ),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.location_city,
                     color: Colors.black87,
                     size: 50,
+                  ),
+                  suffixIcon: IconButton(
+                    onPressed: () => Navigator.pop(context, cityName),
+                    icon: const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 onChanged: (value) {
@@ -51,15 +58,6 @@ class _CityScreenState extends State<CityScreen> {
                 },
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context, cityName);
-              },
-              child: const Text(
-                'Get weather',
-                style: TextStyle(fontSize: 30.0),
-              ),
-            )
           ],
         ),
       ),

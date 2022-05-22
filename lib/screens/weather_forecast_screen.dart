@@ -25,10 +25,6 @@ class _WearherForecastScreenState extends State<WearherForecastScreen> {
     super.initState();
     forecastObject =
         WeatherAPI().fetchWeatherForecastWithCity(cityName: _cityName);
-    // forecastObject?.then((weather) {
-    //   // ignore: avoid_print
-    //   print(weather.list?[0].weather?[0].main);
-    // });
   }
 
   @override
@@ -44,15 +40,13 @@ class _WearherForecastScreenState extends State<WearherForecastScreen> {
           IconButton(
             onPressed: () async {
               String? tappedName = await Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CityScreen()));
+                  MaterialPageRoute(builder: (context) => const CityScreen()));
               if (tappedName != null) {
-                print('Hi I am from here ##################');
                 setState(() {
                   _cityName = tappedName;
-                forecastObject = WeatherAPI()
-                    .fetchWeatherForecastWithCity(cityName: _cityName);
+                  forecastObject = WeatherAPI()
+                      .fetchWeatherForecastWithCity(cityName: _cityName);
                 });
-                
               }
             },
             icon: const Icon(Icons.location_city),
