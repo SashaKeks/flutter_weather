@@ -7,6 +7,8 @@ import 'package:wearher_app/widgets/city_view.dart';
 import 'package:wearher_app/widgets/detail_view.dart';
 import 'package:wearher_app/widgets/temp_view.dart';
 
+import 'city_screen.dart';
+
 class WearherForecastScreen extends StatefulWidget {
   const WearherForecastScreen({Key? key}) : super(key: key);
 
@@ -39,7 +41,22 @@ class _WearherForecastScreenState extends State<WearherForecastScreen> {
         leading:
             IconButton(icon: const Icon(Icons.my_location), onPressed: () {}),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.location_city))
+          IconButton(
+            onPressed: () async {
+              String? tappedName = await Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CityScreen()));
+              if (tappedName != null) {
+                print('Hi I am from here ##################');
+                setState(() {
+                  _cityName = tappedName;
+                forecastObject = WeatherAPI()
+                    .fetchWeatherForecastWithCity(cityName: _cityName);
+                });
+                
+              }
+            },
+            icon: const Icon(Icons.location_city),
+          )
         ],
       ),
       body: ListView(

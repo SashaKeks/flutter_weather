@@ -216,7 +216,7 @@ class Temp {
 
 class FeelsLike {
   double? day;
-  double? night;
+  num? night;
   double? eve;
   num? morn;
 

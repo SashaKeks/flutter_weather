@@ -41,7 +41,7 @@ Widget forecastCard(AsyncSnapshot<WeatherForecast>? snapshot, int index) {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       '$tempMin °C',
-                      style: TextStyle(fontSize: 30, color: Colors.white),
+                      style: const TextStyle(fontSize: 30, color: Colors.white),
                     ),
                   ),
                   Image.network(
