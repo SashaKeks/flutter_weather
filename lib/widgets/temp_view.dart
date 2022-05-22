@@ -26,7 +26,7 @@ class TempView extends StatelessWidget {
         Column(
           children: [
             Text(
-              '$temp C',
+              '$temp °C',
               style: const TextStyle(fontSize: 54.0, color: Colors.black87),
             ),
             Text(
