@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:wearher_app/api/weather_api.dart';
 import 'package:wearher_app/models/weather_forecast_daily.dart';
 import 'package:wearher_app/widgets/city_view.dart';
+import 'package:wearher_app/widgets/detail_view.dart';
 import 'package:wearher_app/widgets/temp_view.dart';
 
 class WearherForecastScreen extends StatefulWidget {
@@ -54,12 +54,18 @@ class _WearherForecastScreenState extends State<WearherForecastScreen> {
                     CityView(
                       snapshot: snapshot,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
                     TempView(
                       snapshot: snapshot,
                     ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    DetailView(
+                      snapshot: snapshot,
+                    )
                   ],
                 );
               } else {

@@ -106,9 +106,9 @@ class WeatherList {
   int? pressure;
   int? humidity;
   List<Weather>? weather;
-  double? speed;
-  int? deg;
-  double? gust;
+  num? speed;
+  num? deg;
+  num? gust;
   int? clouds;
   double? pop;
   num? rain;
@@ -218,7 +218,7 @@ class FeelsLike {
   double? day;
   double? night;
   double? eve;
-  double? morn;
+  num? morn;
 
   FeelsLike({this.day, this.night, this.eve, this.morn});
 
